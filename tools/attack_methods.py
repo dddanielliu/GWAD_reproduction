@@ -46,7 +46,7 @@ def get_attack_algorithm(data_type, device, cfg, model, q_budgets, stop=True):
         elif alg_type == 'sign-flip':
             alg = attack.SignFlip(device, model=model, q_budgets=q_budgets, eps=0.1, stop=stop)
         elif alg_type == 'square':
-            alg = attack.Square2(device, model=model, q_budgets=q_budgets, eps=0.01, stop=stop)
+            alg = attack.Square2(device, model=model, q_budgets=q_budgets, eps=cfg.get("eps", 0.01), p_init=cfg.get("p_init", 0.8), stop=stop)
         else:
             raise Exception("Invalid attack algorithm name")
     elif data_type == 'tiny_imagenet':
@@ -65,7 +65,7 @@ def get_attack_algorithm(data_type, device, cfg, model, q_budgets, stop=True):
         elif alg_type == 'sign-flip':
             alg = attack.SignFlip(device, model=model, q_budgets=q_budgets, eps=0.1, stop=stop)
         elif alg_type == 'square':
-            alg = attack.Square2(device, model=model, q_budgets=q_budgets, eps=0.01, stop=stop)
+            alg = attack.Square2(device, model=model, q_budgets=q_budgets, eps=cfg.get("eps", 0.01), p_init=cfg.get("p_init", 0.8), stop=stop)
         else:
             raise Exception("Invalid attack algorithm name")
     elif data_type == 'imagenet':
@@ -84,7 +84,7 @@ def get_attack_algorithm(data_type, device, cfg, model, q_budgets, stop=True):
         elif alg_type == 'sign-flip':
             alg = attack.SignFlip(device, model=model, q_budgets=q_budgets, eps=0.1, stop=stop)
         elif alg_type == 'square':
-            alg = attack.Square2(device, model=model, q_budgets=q_budgets, eps=0.01, stop=stop)
+            alg = attack.Square2(device, model=model, q_budgets=q_budgets, eps=cfg.get("eps", 0.01), p_init=cfg.get("p_init", 0.8), stop=stop)
         else:
             raise Exception("Invalid attack algorithm name")
     else:
