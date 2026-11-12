@@ -14,3 +14,11 @@ model/cifar10/
 # GWAD run results (--save_dir)
 results/
 stats/shards/
+
+# local run logs and per-run outputs (not tracked)
+demo.log
+stats/dist/
+stats/log_hsja_standard.txt
+
+# local model weights (large, downloaded/converted locally)
+model/resnet18.pt
